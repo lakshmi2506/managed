@@ -1,0 +1,26 @@
+minimum_cumulusci_version: '3.85.0'
+project:
+    name: solution
+    package:
+        name: solution
+        namespace: solution
+        api_version: '60.0'
+    git:
+        default_branch: 'main'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/solution/tests
+            options:
+                outputdir: robot/solution/results
+
+    robot_testdoc:
+        options:
+            path: robot/solution/tests
+            output: robot/solution/doc/solution_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
